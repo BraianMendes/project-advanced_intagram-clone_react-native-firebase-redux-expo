@@ -1,14 +1,23 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { Text, View, Button } from "react-native";
 
-export class Landing extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text> Papai Decinho Arrasa!</Text>
-      </View>
-    );
-  }
+export default function Landing({ navigation }) {
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Instagram</Text>
+      <Button
+        title="Register"
+        onPress={() => {
+          navigation.navigate("Register");
+        }}
+      />
+      <Button
+        title="Login"
+        onPress={() => {
+          navigation.navigate("Login");
+        }}
+      />
+    </View>
+  );
 }
 
-export default Landing;
