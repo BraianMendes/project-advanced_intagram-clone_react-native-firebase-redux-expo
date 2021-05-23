@@ -1,7 +1,13 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
+import * as firebase from "firebase";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { firebaseConfig } from "./utils/firebaseConfig";
+
+if (firebase.app?.length === 0) {
+  firebase.initializeApp(firebaseConfig);
+}
+
 import Landing from "./components/auth/Landing";
 import Register from "./components/auth/Register";
 
